@@ -24,7 +24,7 @@ end)
 config.window_background_opacity = 0.90
 config.win32_system_backdrop = "Disable"
 config.color_scheme = 'Kanagawa (Gogh)'
-config.font = wezterm.font("FiraCode Nerd Font Mono")
+config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = 'Bold'})
 config.font_size = 10
 config.enable_scroll_bar = true
 -- config.default_cursor_style = 'BlinkingUnderline'
