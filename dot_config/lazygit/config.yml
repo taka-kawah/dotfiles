@@ -1,0 +1,11 @@
+git:
+  diffRenderers:
+    - command: delta --dark --paging=never
+gui:
+  animationExplostion: false
+  spinner:
+    frames:
+      - " "
+    rate: 5000
+os:
+  copyToClipboardCmd: "printf %s {{text}} | clip.exe"

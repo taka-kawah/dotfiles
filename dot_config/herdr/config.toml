@@ -1,0 +1,7 @@
+onboarding = false
+
+[terminal]
+new_cwd = "current"
+
+[ui]
+host_cursor = "native"

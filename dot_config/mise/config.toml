@@ -1,0 +1,45 @@
+[tools]
+# 言語ランタイム
+go = "latest"
+node = "latest"
+python = "latest"
+rust = "stable"
+dotnet = "8"
+
+# 開発ツール
+gh = "latest"
+git-lfs = "latest"
+neovim = "latest"
+uv = "latest"
+
+# インフラ (破壊的変更があるためバージョン固定)
+terraform = "1.15.0"
+terragrunt = "0.97.2"
+aws-cli = "2"
+
+# CLI ユーティリティ
+bat = "latest"
+delta = "latest"
+eza = "latest"
+fd = "latest"
+fzf = "latest"
+hexyl = "latest"
+jq = "latest"
+ripgrep = "latest"
+starship = "latest"
+yazi = "latest"
+zoxide = "latest"
+herdr = "latest"
+tree-sitter = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+btop = "latest"
+7zip = "latest"
+resvg = "latest"
+ffmpeg = "latest"
+duckdb = "1.5.6"
+glow = "latest"
+"pypi:harlequin" = "latest"
+chezmoi = "latest"
+"cargo:tabiew" = "latest"
+xh = "latest"

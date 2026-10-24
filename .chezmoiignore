@@ -1,0 +1,5 @@
+# リポジトリ内で手動実行するスクリプトと、install.ps1 が配置する Windows 用の設定。ホームには配置しない
+install.sh
+install.ps1
+README.md
+windows

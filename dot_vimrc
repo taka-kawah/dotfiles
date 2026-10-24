@@ -1,0 +1,38 @@
+inoremap jj <Esc> 
+
+set autoindent
+set smartindent
+
+set tabstop=2
+set shiftwidth=4
+set expandtab
+
+set nobackup
+set noswapfile
+
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap < <><Left>
+
+" win32yank
+let g:win32yank_path = expand("~/.local/bin/win32yank.exe")
+
+if executable(g:win32yank_path)
+    " 範囲選択してy でWindowsクリップボードへコピー
+    vnoremap <silent> y :<C-u>call system(g:win32yank_path . ' -i --crlf', GetSelectedText())<CR>
+
+    " ノーマルモードで p で貼り付け
+    nnoremap <silent> p :<C-u>execute 'read !' . g:win32yank_path . ' -o --lf'<CR>
+
+    function! GetSelectedText() abort
+        let l:save_reg = getreg('"')
+        let l:save_regtype = getregtype('"')
+        normal! gvy
+        let l:selected_text = getreg('"')
+        call setreg('"', l:save_reg, l:save_regtype)
+        return l:selected_text
+    endfunction
+endif
+

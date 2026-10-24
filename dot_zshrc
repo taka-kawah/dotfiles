@@ -1,0 +1,40 @@
+# vim mode 有効化
+# ecs でvim mode, iで解除(insertモード)
+bindkey -v
+
+# ---------- PATH ----------
+export PATH=~/.local/bin:$PATH
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# ---------- 秘密情報(トークン等) ----------
+[[ -f ~/.env_var ]] && source ~/.env_var
+
+# ---------- alias ----------
+alias cls="clear"
+alias clip="iconv -t UTF-16LE | clip.exe"
+alias gpass="cat ~/.pass|clip.exe"
+alias b="bat"
+alias e="eza"
+alias v="nvim"
+alias vl="NVIM_APPNAME=nvim-lite nvim"
+alias lzd="lazydocker"
+alias lzg="lazygit"
+alias h="herdr"
+
+# ---------- function ----------
+function y() {
+  local tmp cwd
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r cwd < "$tmp"
+  [[ -n "$cwd" && -d "$cwd" && "$cwd" != "$PWD" ]] && builtin cd -- "$cwd"
+  command rm -f -- "$tmp"
+}
+
+# ---------- plugin ----------
+source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

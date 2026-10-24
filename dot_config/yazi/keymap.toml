@@ -1,0 +1,10 @@
+[[mgr.prepend_keymap]]
+on = ["m", "i"]
+run = "plugin zoom 1"
+desc = "Zoom in"
+
+[[mgr.prepend_keymap]]
+on = ["m", "o"]
+run = "plugin zoom -1"
+desc = "Zoom out"
+

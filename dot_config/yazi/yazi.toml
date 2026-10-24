@@ -1,0 +1,36 @@
+[mgr]
+show_hidden = true
+ratio = [1, 2, 5]
+
+[preview]
+max_width = 2000
+max_height = 1200
+
+[plugin]
+prepend_previewers = [
+  { url = "*.{csv,tsv,parquet}", run = "piper -- duckdb -c \"SELECT * FROM '$1' LIMIT 20\"" },
+  { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+]
+
+[opener]
+edit = [
+  { run = 'NVIM_APPNAME=nvim-lite nvim %s', block = true, desc = "nvim-lite" },
+]
+sqlite = [
+  { run = "harlequin -a sqlite -r %s1", orphan = true, desc = "Harlequin"}
+]
+win = [
+  { run = 'explorer.exe "$(wslpath -w %s1)"', orphan = true, desc = "Windows default app"}
+]
+tw = [
+  { run = 'tw %s1', block = true, desc = "tabiew"}
+]
+
+[open]
+prepend_rules = [
+  { url = "*.{db,sqlite,sqlite3}", use = "sqlite" },
+  { url = "*.{pptx,xlsx}", use = "win" },
+  { url = "*.{csv,tsv,parquet}", use = "tw" },
+  { mime = "{image,video}/*", use = "win" },
+  { mime = "text/*", use = "edit" },
+]

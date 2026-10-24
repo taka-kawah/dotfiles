@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "ea92cf4"
+hash = "9776f378459072b6c2875eae5addc49d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "e0bbd20"
+hash = "d1e0499cae5f3aeb628c267616d4b682"
+
+[[flavor.deps]]
+use = "6ruby1/eldritch"
+rev = "9a76a97"
+hash = "c3abec27ff084820f1c8dd7a2866bab8"
