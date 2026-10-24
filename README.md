@@ -1,7 +1,7 @@
 # dotfiles
 
-Windows, Ubuntuを想定
-現状WSL環境のみ
+- Windows, Ubuntuを想定
+- 現状WSL環境のみ
 
 ## prerequisite
 
