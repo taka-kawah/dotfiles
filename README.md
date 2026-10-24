@@ -31,6 +31,8 @@ wezterm とフォント等入れるだけ
 
 `git clone` が必要😥
 
-```
+```powershell
+git clone https://github.com/taka-kawah/dotfiles.git
+Set-Location dotfiles
 .\install.ps1
 ```
