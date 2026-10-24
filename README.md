@@ -20,8 +20,8 @@ Ubuntu側のみ
 sudo apt update
 sudo apt install mise zsh-syntax-highlighting zsh-autosuggestions
 mise use -g chezmoi
-./install.sh
 chezmoi apply
+./install.sh
 source ~/.zshrc
 ```
 
