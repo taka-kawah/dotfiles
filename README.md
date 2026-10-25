@@ -21,15 +21,19 @@ sudo apt update
 sudo apt install mise zsh-syntax-highlighting zsh-autosuggestions
 mise use -g chezmoi
 chezmoi apply
-./install.sh
+curl -fsSL https://raw.githubusercontent.com/taka-kawah/dotfiles/main/install.sh | bash
 source ~/.zshrc
 ```
 
 ## setup - Windows
 
-wezterm 入れるだけ
+wezterm とフォント等入れるだけ
 
-```Powershell
+`git clone` が必要😥
+
+```powershell
+git clone https://github.com/taka-kawah/dotfiles.git
+Set-Location dotfiles
 .\install.ps1
 ```
 
