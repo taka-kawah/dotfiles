@@ -3,3 +3,7 @@ install.sh
 install.ps1
 README.md
 windows
+
+{{ if eq .chezmoi.os "windows" }}
+.zshrc
+{{ end }}
